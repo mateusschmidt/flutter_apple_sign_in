@@ -22,7 +22,10 @@ class AppleSignInButton extends StatefulWidget {
   /// A custom corner radius to be used by this button.
   final double cornerRadius;
 
+  final String label;
+
   const AppleSignInButton({
+    this.label,
     this.onPressed,
     this.type = ButtonType.defaultButton,
     this.style = ButtonStyle.white,
@@ -86,7 +89,7 @@ class _AppleSignInButtonState extends State<AppleSignInButton> {
               ),
             ),
             Text(
-              widget.type == ButtonType.continueButton
+              widget.label ?? widget.type == ButtonType.continueButton
                   ? 'Continue with Apple'
                   : 'Sign in with Apple',
               style: TextStyle(
